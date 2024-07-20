@@ -1,0 +1,55 @@
+
+  .box { /*container to hold items */
+    width: 20%; 
+    margin: 20px;
+    box-sizing: border-box;
+    }
+  .imgBox { /*image box to contain image within the .box class */
+    position: relative;
+    padding: 0;
+    width: 100%;
+    display: inline-block;
+    margin: auto;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+  }
+    .imgBox:hover { /* add a small border with a drop shadow on hover */
+      filter: drop-shadow(0px 0px 0px rgba(0,0,0,.6))
+      drop-shadow(0px 0px 10px rgba(0,0,0,.6));
+    }
+
+  .imgBox img { /*actual image within the image box, so it stays within div */
+    display: block; /* no whitespace */
+    transition: .3s ease-in-out;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+  }
+    .imgBox:hover img { /* scale image but keep it within box on hover */
+      /* transform: scale(1.2); */
+      opacity: 0.5;
+    }
+  .hovertext { /* text I want to appear centered on hover */
+    display: none;
+    clear: both;
+    text-align: center;
+    color: #0357a1;
+    font-size: 1em;
+    width: 100%;
+    position: absolute;
+    mix-blend-mode: color-burn;
+    z-index: 2;
+    margin: 0;
+    top: 50%;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    padding: 30px;
+    transform: translateY(-50%);
+  }
+  .hovertext:hover {
+      display: block;
+      opacity: 1;
+  }
+  .imgBox:hover .hovertext{ 
+    display: block;
+  }
